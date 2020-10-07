@@ -14,6 +14,15 @@
 
 typedef struct entry_controller {
     // define your variables here
+    
+    // A general semaphore initialised to the number of free bays.
+    sem_t num_free_bays;
+    
+    // Keeps track of how many people are currently in queue
+    int num_trains_in_queue;
+    // Mutex for controlling access to num_trains_in_queue
+    sem_t queue_semaphore;
+    
 } entry_controller_t;
 
 void entry_controller_init( entry_controller_t *entry_controller, int loading_bays );
