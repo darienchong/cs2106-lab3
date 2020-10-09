@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <pthread.h>
 
 #define SHARED_BETWEEN_THREADS 0
 

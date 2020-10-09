@@ -8,6 +8,7 @@
 #define __CS2106_ENTRY_CONTROLLER_H_
 
 #include <semaphore.h>
+#include <stdbool.h>
 
 #define ENTRY_CONTROLLER_MAX_USES 5000 // we impose a limit on the number of uses we can
                                        // have
@@ -18,10 +19,18 @@ typedef struct entry_controller {
     // A general semaphore initialised to the number of free bays.
     sem_t num_free_bays;
     
-    // Keeps track of how many people are currently in queue
-    int num_trains_in_queue;
-    // Mutex for controlling access to num_trains_in_queue
-    sem_t queue_semaphore;
+    // A rolling counter.
+    int queue_number;
+    // Mutex for controlling access to the rolling counter.
+    sem_t queue_number_semaphore;
+    
+    // Keeps track of the next queue number to go into the bay.
+    int next_queue_number;
+    // Mutex for controlling access to the next_queue_number variable.
+    sem_t next_queue_number_semaphore;
+    
+    // Flag to enable debug messages.
+	bool is_debug;
     
 } entry_controller_t;
 
