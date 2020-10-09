@@ -77,5 +77,6 @@ void entry_controller_post( entry_controller_t *entry_controller ) {
 void entry_controller_destroy( entry_controller_t *entry_controller ) {
 	sem_destroy(&(entry_controller -> num_free_bays));
 	sem_destroy(&(entry_controller -> queue_number_semaphore));
+	sem_destroy(&(entry_controller -> next_queue_number_semaphore));
 }
 
