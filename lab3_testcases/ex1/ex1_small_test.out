@@ -1,0 +1,10 @@
+[Thread  3] waiting on barrier
+[Thread  2] waiting on barrier
+[Thread  0] waiting on barrier
+[Thread  1] waiting on barrier
+[Thread  4] waiting on barrier
+[Thread  4] exiting barrier
+[Thread  3] exiting barrier
+[Thread  2] exiting barrier
+[Thread  0] exiting barrier
+[Thread  1] exiting barrier
